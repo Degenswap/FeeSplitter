@@ -131,7 +131,7 @@ contract FeeSplitter is Ownable {
     IRouter public router;
     address public system;
     mapping(address => Project) public projects; // contract address => company wallet
-    uint256 public claimGasCost;    // gas cost to call function claimFeeFrom()
+    uint256 public claimGasCost = 200000;    // gas cost to call function claimFeeFrom()
 
     modifier onlySystem() {
         require(system == msg.sender, "Ownable: caller is not the owner");
